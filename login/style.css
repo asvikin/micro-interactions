@@ -1,0 +1,78 @@
+:root {
+    --scale: scaleX(0);
+    --color: blue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e2f1ff;
+    font-size: 2rem;
+}
+
+button,
+button:active,
+button:focus {
+    outline: none;
+    border: none;
+    font-size: inherit;
+}
+
+.wrapper {
+    position: relative;
+    border: 2px solid var(--color);
+    border-radius: 10px;
+    padding-left: 10px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+input {
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    background: transparent;
+}
+
+.eye {
+    width: 50px;
+    height: 100%;
+    padding: 5px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.action {
+    width: 100px;
+    height: 100%;
+    background: var(--color);
+    color: bisque;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    padding: 20px
+}
+
+.action::before {
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 100px);
+    height: 100%;
+    background: var(--color);
+    transform: var(--scale);
+    line-height: 4.5rem;
+    transition: transform 0.75s;
+    transform-origin: right;
+}
+
+.hide {
+    display: none;
+}
