@@ -1,0 +1,66 @@
+:root {
+    --BG: #27272b;
+    --text-color: wheat;
+    --BG-opp: wheat;
+    --text-color-opp: #27272b;
+    --togglePos: 0rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--BG);
+    transition: all 0.75s ease-in-out;
+}
+
+body.light {
+    --BG: wheat;
+    --BG-opp: #27272b;
+    --text-color: #27272b;
+    --text-color-opp: wheat;
+    --togglePos: 2.5rem;
+}
+
+.checkbox {
+    display: none;
+}
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: var(--BG-opp);
+    border-radius: 5rem;
+    padding: 0.5rem;
+    height: 2.5rem;
+    width: 5rem;
+    font-size: 1.5rem;
+    transition: all 0.75s ease-in-out;
+    cursor: pointer;
+}
+
+.toggle .ball {
+    position: absolute;
+    height: 2rem;
+    background-color: var(--BG);
+    width: 2rem;
+    border-radius: 50%;
+    top: 0.25rem;
+    left: 0.25rem;
+    transform: translateX(var(--togglePos));
+    transition: tramsform 0.4s ease-in, background 0.4s ease-in-out;
+}
+
+.fa {
+    color: var(--BG);
+}

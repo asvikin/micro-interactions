@@ -1,59 +1,59 @@
 html {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    height: 100vh;
+  height: 100vh;
 }
 
 .hamb {
-    height: 50px;
-    width: 50px;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  height: 50px;
+  width: 50px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .stripe {
-    height: 4px;
-    width: 30px;
-    background: wheat;
-    border-radius: 2px;
-    transition: all cubic-bezier(0.96, -0.72, 0, 2.18) 0.75s;
+  height: 4px;
+  width: 30px;
+  background: wheat;
+  border-radius: 2px;
+  transition: all cubic-bezier(0.96, -0.72, 0, 2.18) 0.75s;
 }
 
 .stripe::before,
 .stripe::after {
-    content: '';
-    border-radius: 2px;
-    position: absolute;
-    height: 4px;
-    width: 30px;
-    background: wheat;
-    transition: all cubic-bezier(0.96, -0.72, 0, 2.18) 0.75s;
+  content: "";
+  border-radius: 2px;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  background: wheat;
+  transition: all cubic-bezier(0.96, -0.72, 0, 2.18) 0.75s;
 }
 
 .stripe::after {
-    transform: translateY(8px);
+  transform: translateY(8px);
 }
 
 .stripe::before {
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 .hamb.open .stripe {
-    transform: translateX(-30px);
-    background: transparent;
+  transform: translateX(-30px);
+  background: transparent;
 }
 
 .hamb.open .stripe::before {
-    transform: rotate(45deg) translate(20px, -20px);
+  transform: rotate(45deg) translate(20px, -20px);
 }
 
 .hamb.open .stripe::after {
-    transform: rotate(-45deg) translate(20px, 20px);
+  transform: rotate(-45deg) translate(20px, 20px);
 }
