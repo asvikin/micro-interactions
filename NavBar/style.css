@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: calc(100vh - 3rem);
+  width: 100%;
+  background-color: #ffeeee;
+}
+
+.head {
+  width: 100vw;
+  height: 3rem;
+  background-color: #001111;
+  /* border-radius: 0 0 1rem 1rem; */
+  box-shadow: -0.5rem 0.5rem 5px #001111;
+  z-index: 10;
+  position: fixed;
+}
+
+.top-nav {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-list {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 2rem 0 2rem;
+}
+
+.nav-list li {
+  text-decoration: none;
+  list-style: none;
+  padding: 1rem;
+  margin: 0.25rem;
+  font-size: 1.2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-list li::before {
+  content: "";
+  height: 5px;
+  width: 0;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  position: absolute;
+  background-color: #ffeeee;
+  transition: all 0.25s ease-in-out;
+}
+
+.nav-list li:hover::before {
+  width: 100%;
+}
+
+.nav-list li:hover a {
+  opacity: 0.5;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #ffeeee;
+}
+
+.logo-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo-text > * {
+  margin: 1rem;
+}
+
+.logo-text .text {
+  text-decoration: none;
+  color: #ffeeee;
+  font-size: 1.5rem;
+}
+
+.logo-text .logo {
+  color: #ffeeee;
+  font-size: 1.5rem;
+}
+
+.hamb {
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.stripe {
+  height: 4px;
+  width: 30px;
+  background: #ffeeee;
+  border-radius: 2px;
+  transition: all cubic-bezier(0.96, -0.72, 0, 2.18) 0.75s;
+}
+
+.stripe::before,
+.stripe::after {
+  content: "";
+  border-radius: 2px;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  background: #ffeeee;
+  transition: all cubic-bezier(0.96, -0.72, 0, 2.18) 0.75s;
+}
+
+.stripe::after {
+  transform: translateY(8px);
+}
+
+.stripe::before {
+  transform: translateY(-8px);
+}
+
+.hamb.open .stripe {
+  transform: translateX(-30px);
+  background: transparent;
+}
+
+.hamb.open .stripe::before {
+  transform: rotate(45deg) translate(20px, -20px);
+}
+
+.hamb.open .stripe::after {
+  transform: rotate(-45deg) translate(20px, 20px);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  /* display: none; */
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 5px;
+  box-shadow: -3px 3px 5px grey;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar:hover {
+  display: block;
+}
